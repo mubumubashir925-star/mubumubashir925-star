@@ -15,11 +15,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          # No cache: Skips lock file check entirely
 
       - name: Install Dependencies
         run: npm install
-        # This installs from package.json only — NO lock file needed
 
       - name: Build App
         run: npm run build
